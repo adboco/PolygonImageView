@@ -118,6 +118,7 @@
     //// Polygon Drawing
     UIBezierPath* polygonPath = [self roundedPolygonPathWithRect:self.frame lineWidth:_borderWidth sides:_sides cornerRadius:_cornerRadius];
     
+    // Mask
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.path = polygonPath.CGPath;
     maskLayer.lineWidth = _borderWidth;
@@ -127,6 +128,7 @@
     self.layer.mask = maskLayer;
     self.layer.masksToBounds = YES;
     
+    // Border
     CAShapeLayer *borderLayer = [CAShapeLayer layer];
     borderLayer.path = polygonPath.CGPath;
     borderLayer.lineWidth = _borderWidth;
