@@ -114,6 +114,28 @@
     [self applyPolygonMask];
 }
 
+#define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
+
+-(void)spinAnimationWithDuration:(CGFloat)duration{
+    self.transform = CGAffineTransformMakeScale(0.001, 0.001);
+    
+    CGAffineTransform rotate = CGAffineTransformRotate(self.transform, M_PI);
+    CGAffineTransform scale = CGAffineTransformScale(rotate, 1000/2, 1000/2);
+    
+    [UIView animateWithDuration:duration/2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        [self setTransform:scale];
+    }completion:^(BOOL finished){
+        if (finished) {
+            CGAffineTransform rotate = CGAffineTransformRotate(self.transform, M_PI);
+            CGAffineTransform scale = CGAffineTransformScale(rotate, 2, 2);
+            
+            [UIView animateWithDuration:duration/2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [self setTransform:scale];
+            }completion:nil];
+        }
+    }];
+}
+
 -(void)applyPolygonMask{
     //// Polygon Drawing
     UIBezierPath* polygonPath = [self roundedPolygonPathWithRect:self.frame lineWidth:_borderWidth sides:_sides cornerRadius:_cornerRadius];

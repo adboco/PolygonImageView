@@ -20,5 +20,7 @@ IB_DESIGNABLE
 -(id)initWithImage:(UIImage *)image borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth sides:(NSUInteger)sides;
 -(id)initWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth sides:(NSUInteger)sides;
 
+-(void)spinAnimationWithDuration:(CGFloat)duration;
+
 
 @end

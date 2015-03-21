@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PolygonImageView.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet PolygonImageView *polygonImageView;
 
 @end
 
