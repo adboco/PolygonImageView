@@ -5,7 +5,7 @@ PolygonImageView is a subclass of UIImageView that allows put a polygonal frame 
 ![ScreenShot](https://lh4.googleusercontent.com/-kl4YlYtNxhw/VQtH1d49KHI/AAAAAAAAARQ/LcegcfNwESw/w704-h1250-no/iOS%2BSimulator%2BScreen%2BShot%2B19.3.2015%2B22.26.58.png)
 
 ## Installation
-Copy ```PolygonImageView.h``` and ```PolygonImageView.m``` in your Xcode Project.
+Copy ```PolygonImageView.h``` and ```PolygonImageView.m``` into your Xcode Project.
 
 ## Usage
 ### Code
